@@ -1,0 +1,13 @@
+{
+  "name": "krabi",
+  "description": "Premium Ghost Theme",
+  "authors": [
+    "Aspire Themes"
+  ],
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "bootstrap-transition": "*",
+    "dragscroll": "^0.0.8",
+    "zoom.js": "^0.0.1"
+  }
+}

@@ -1,0 +1,100 @@
+<div class='c-widget'>
+  <ul class='c-social-icons o-plain-list'>
+    {{#if @site.twitter}}
+      <li class='c-social-icons__item'>
+        <a href='{{ twitter_url }}'>
+          <div class='c-social-icons__icon'>{{> icons/x }}</div>
+          <span class='u-screenreader-only'>Twitter</span>
+        </a>
+      </li>
+    {{/if}}
+
+    {{#if @site.facebook}}
+      <li class='c-social-icons__item'>
+        <a href='{{ facebook_url }}'>
+          <span class='c-social-icons__icon' data-icon='ei-sc-facebook' data-size='s'></span>
+          <span class='u-screenreader-only'>Facebook</span>
+        </a>
+      </li>
+    {{/if}}
+
+    {{#if @custom.linkedin_page}}
+      <li class='c-social-icons__item'>
+        <a href='{{ @custom.linkedin_page }}'>
+          <span class='c-social-icons__icon' data-icon='ei-sc-linkedin' data-size='s'></span>
+          <span class='u-screenreader-only'>LinkedIn</span>
+        </a>
+      </li>
+    {{/if}}
+
+    {{#if @custom.bluesky_page}}
+      <li class='c-social-icons__item'>
+        <a href='{{ @custom.bluesky_page }}'>
+          {{> icons/bluesky }}
+          <span class='u-screenreader-only'>Bluesky</span>
+        </a>
+      </li>
+    {{/if}}
+
+    {{#if @custom.threads_page}}
+      <li class='c-social-icons__item'>
+        <a href='{{ @custom.threads_page }}'>
+          {{> icons/threads }}
+          <span class='u-screenreader-only'>Threads</span>
+        </a>
+      </li>
+    {{/if}}
+
+    {{#if @custom.mastodon_page}}
+      <li class='c-social-icons__item'>
+        <a href='{{ @custom.mastodon_page }}'>
+          {{> icons/mastodon }}
+          <span class='u-screenreader-only'>Mastodon</span>
+        </a>
+      </li>
+    {{/if}}
+
+    {{#if @custom.tiktok_page}}
+      <li class='c-social-icons__item'>
+        <a href='{{ @custom.tiktok_page }}'>
+          {{> icons/tiktok }}
+          <span class='u-screenreader-only'>TikTok</span>
+        </a>
+      </li>
+    {{/if}}
+
+    {{#if @custom.youtube_page}}
+      <li class='c-social-icons__item'>
+        <a href='{{ @custom.youtube_page }}'>
+          <span class='c-social-icons__icon' data-icon='ei-sc-youtube' data-size='s'></span>
+          <span class='u-screenreader-only'>YouTube</span>
+        </a>
+      </li>
+    {{/if}}
+
+    {{#if @custom.instagram_page}}
+      <li class='c-social-icons__item'>
+        <a href='{{ @custom.instagram_page }}'>
+          <span class='c-social-icons__icon' data-icon='ei-sc-instagram' data-size='s'></span>
+          <span class='u-screenreader-only'>Instagram</span>
+        </a>
+      </li>
+    {{/if}}
+
+    {{#if @custom.pinterest_page}}
+      <li class='c-social-icons__item'>
+        <a href='{{ @custom.pinterest_page }}'>
+          <span class='c-social-icons__icon' data-icon='ei-sc-pinterest' data-size='s'></span>
+          <span class='u-screenreader-only'>Pinterest</span>
+        </a>
+      </li>
+    {{/if}}
+
+    <li class='c-social-icons__item'>
+      <a href='/rss/'>
+        <span class='c-social-icons__icon'>{{> icons/rss }}</span>
+        <span class='u-screenreader-only'>RSS</span>
+      </a>
+    </li>
+  </ul>
+</div>

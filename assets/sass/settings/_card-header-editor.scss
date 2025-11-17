@@ -1,0 +1,36 @@
+// *----------------------------------*\
+//  Settings > Card Header / Editor
+// *----------------------------------*/
+
+:root {
+  --color-headerCard-light: #FFF;
+  --color-headerCard-dark: #000;
+
+  // Style – Light
+  --color-text-headerCardStyleLight: var(--color-headerCard-dark);
+  --color-background-headerCardStyleLight: var(--color-headerCard-light);
+
+  --color-text-button-headerCardStyleLight: var(--color-headerCard-light);
+  --color-background-button-headerCardStyleLight: var(--ghost-accent-color);
+
+  // Style – Dark
+  --color-text-headerCardStyleDark: var(--color-headerCard-light);
+  --color-background-headerCardStyleDark: var(--color-headerCard-dark);
+
+  --color-text-button-headerCardStyleDark: var(--color-headerCard-dark);
+  --color-background-button-headerCardStyleDark: var(--color-headerCard-light);
+
+  // Style – Accent
+  --color-text-headerCardStyleAccent: var(--color-headerCard-light);
+  --color-background-headerCardStyleAccent: var(--ghost-accent-color);
+
+  --color-text-button-headerCardStyleAccent: var(--color-headerCard-dark);
+  --color-background-button-headerCardStyleAccent: var(--color-headerCard-light);
+
+  // Style – Image
+  --color-text-headerCardStyleImage: var(--color-headerCard-light);
+  --color-background-headerCardStyleImage: var(--color-headerCard-dark);
+
+  --color-text-button-headerCardStyleImage: var(--color-headerCard-dark);
+  --color-background-button-headerCardStyleImage: var(--color-headerCard-light);
+}

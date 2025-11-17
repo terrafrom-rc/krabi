@@ -1,0 +1,59 @@
+<div class='c-post-card js-post-card {{ post_class }}'>
+  {{#if feature_image}}
+    <div class='c-post-card__media'>
+      <div class='c-post-card__image-wrap'>
+        <img
+          alt="{{#if feature_image_alt}}{{ feature_image_alt }}{{/if}}"
+          class='c-post-card__image lazyload'
+          data-srcset='
+            {{ img_url feature_image size='feature-image-small' }} 346w,
+            {{ img_url feature_image size='feature-image-medium' }} 692w,
+            {{ img_url feature_image size='feature-image-large' }} 1384w'
+          sizes='(min-width: 1260px) 692px, (min-width: 1040px) calc(34vw + 270px), (min-width: 640px) calc(90vw - 61px), calc(100vw - 32px)'
+          data-src='{{ img_url feature_image size='feature-image-large' }}'
+        >
+      </div>
+    </div>
+  {{/if}}
+
+  <div class='c-post-card__content'>
+    <h2 class='c-post-card__title'>
+      <a href='{{ url }}' class='c-post-card__url'>{{ title }}</a>
+
+      <span class='c-post-card__visibility c-post-card__visibility--{{ visibility }}'>
+        <span class='paid'>{{t 'Paid' }}</span>
+        <span class='members'>{{t 'Members' }}</span>
+        <span class='public'>{{t 'Public' }}</span>
+      </span>
+    </h2>
+
+    <p class='c-post-card__excerpt' tabindex='-1'>{{ excerpt }}</p>
+
+    <div class='c-post-card__meta'>
+      <div class='c-post-card__authors'>
+        <div class='c-post-card__authors-images'>
+          {{#foreach authors}}
+            {{#if profile_image}}
+              <a href='{{ url }}' class='c-post-card__author-image-wrap'>
+                <img class='c-post-card__author-image lazyload' data-src='{{ img_url profile_image size='profile-image-small' }}' alt='{{ name }}' width='32' height='32'>
+              </a>
+            {{/if}}
+          {{/foreach}}
+        </div>
+
+        <div>
+          <div class='c-post-card__authors-names'>
+            {{authors separator=' / '}}
+          </div>
+
+          <time class='c-post-card__date' datetime='{{ date format='YYYY-MM-DD' }}'>{{ date format='D MMM YYYY' }}</time>
+        </div>
+      </div>
+
+      <div class='c-post-card__tag'>
+        {{ tags separator='' limit='1' }}
+      </div>
+    </div>
+
+  </div>
+</div>

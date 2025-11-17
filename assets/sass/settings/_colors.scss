@@ -1,0 +1,27 @@
+// *----------------------------------*\
+//  Settings > Colors
+// *----------------------------------*/
+
+:root {
+  --color-text-primary:   #000C2D;
+  --color-text-secondary: #687385;
+  --color-text-white:     #FFFFFF;
+  --color-text-error:     #A01F1F;
+  --color-text-success:   #085E38;
+
+  --color-background-primary:   #F5F7F9;
+  --color-background-secondary: #FFFFFF;
+  --color-background-info:      #F3F6FF;
+  --color-background-success:   #ECFDF5;
+  --color-background-warning:   #FFFAF2;
+  --color-background-danger:    #FDF4F4;
+
+  --color-border-primary:  #DFE3E9;
+  --color-border-info:     #3366FF;
+  --color-border-success:  #52BD95;
+  --color-border-warning:  #FFB020;
+  --color-border-danger:   #D14343;
+
+  --color-subscribe-form-icon: #021637;
+  --color-background-subscribe-form: var(--color-text-primary);
+}

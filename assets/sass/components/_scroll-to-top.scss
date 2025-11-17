@@ -1,0 +1,36 @@
+/*------------------------------------*\
+  Components > Scroll to Top
+  https://moderncss.dev/pure-css-smooth-scroll-back-to-top/
+\*------------------------------------*/
+
+@use "../settings/type";
+@use "../tools/mixins";
+@use "../vendor/mq";
+
+.c-scroll-to-top {
+  display: none;
+
+  @include mq.mq($from: desktop) {
+    display: block;
+    position: absolute;
+    top: calc(100vh + var(--space-8));
+    bottom: 0;
+    right: var(--space-32);
+    pointer-events: none;
+
+    &__link {
+      position: sticky;
+      pointer-events: all;
+      top: calc(100vh - var(--space-64));
+      font-size: type.$type-xl;
+      padding: var(--space-8) var(--space-12);
+      border-radius: var(--global-border-radius);
+      background-color: var(--color-background-secondary);
+      box-shadow: inset 0 0 0 .5px var(--color-border-primary);
+
+      @include mixins.attention() {
+        color: var(--ghost-accent-color);
+      }
+    }
+  }
+}

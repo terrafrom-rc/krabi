@@ -1,0 +1,39 @@
+// ------------------------------------
+// Components > Card Product / Editor
+// ------------------------------------
+
+@use "../settings/type";
+@use 'buttons';
+
+.c-content .kg-product-card {
+  .kg-product-card-container {
+    max-width: 100%;
+    padding: var(--space-24);
+    border-radius: var(--space-4);
+    background: var(--color-background-secondary);
+    box-shadow: inset 0 0 0 .5px var(--color-border-primary);
+  }
+
+  h4.kg-product-card-title {
+    font-size: type.$type--h-xxs;
+    line-height: type.$type--h-xxs-lh;
+    font-weight: type.$type-700;
+  }
+
+  .kg-product-card-rating-star {
+    text-align: right;
+    width: var(--space-24);
+    height: var(--space-32);
+  }
+
+  .kg-product-card-description * {
+    opacity: 1;
+    font-family: var(--type-body);;
+  }
+
+  .kg-product-card-button {
+    @extend .c-btn;
+
+    font-family: var(--type-body);
+  }
+}

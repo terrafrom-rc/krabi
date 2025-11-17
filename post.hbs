@@ -1,0 +1,56 @@
+{{!< default}}
+
+{{#contentFor 'title'}}{{ meta_title }}{{/contentFor}}
+
+{{#post}}
+
+<article class='c-{{ post_class }}'>
+  {{> post-header }}
+
+  {{#if access}}
+    {{#if @custom.show_table_of_contents_on_all_posts}}
+      {{> table-of-contents}}
+    {{/if}}
+
+    {{#has tag='#table-of-content'}}
+      {{> table-of-contents}}
+    {{/has}}
+  {{/if}}
+
+  <section class='c-content {{#unless access}} c-content--has-shadow {{/unless}}'>
+    {{ content }}
+  </section>
+
+  {{!--
+    Show the tags, author, subscribe box, and comments if visitor can access the post, this means that:
+    1. The post is public for anyone
+    2. The post is published for subscribers and the user is a subscriber
+    3. The post is for paid members only and the user is a paid member
+  --}}
+  {{#if access}}
+    {{#if tags}}
+      <section class='c-tags'>
+        {{ tags separator='' }}
+      </section>
+    {{/if}}
+
+    {{#foreach authors}}
+      {{> card-author }}
+    {{/foreach}}
+
+    {{> post-subscribe-form}}
+
+    {{> comments/ghost }}
+
+  {{!--
+    If the post is published for subscribers and paid members and the user is not one of those, show the upgrade box.
+  --}}
+  {{else}}
+    {{> post-upgrade-cta}}
+  {{/if}}
+  <hr>
+</article>
+
+{{/post}}
+
+{{> related-posts}}

@@ -1,0 +1,107 @@
+/*------------------------------------*\
+  Components > Member Plan
+\*------------------------------------*/
+
+@use "../settings/type";
+@use "../vendor/mq";
+
+@include mq.mq($from: desktop) {
+  .c-member-plans {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  .c-member-plan {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .c-member-plan + .c-member-plan {
+    margin-left: var(--space-40);
+  }
+}
+
+.c-member-plan {
+  padding: var(--space-32);
+  margin-bottom: var(--space-32);
+  border-radius: var(--global-border-radius);
+  box-shadow: inset 0 0 0 .5px var(--color-border-primary);
+  background-color: var(--color-background-secondary);
+
+  &--free {
+    box-shadow: inset 0 0 0 .5px var(--ghost-accent-color);
+  }
+
+  &--premium {
+    box-shadow: inset 0 0 0 .5px var(--color-border-primary);
+  }
+
+  &__header {
+    position: relative;
+    text-align: center;
+    padding-bottom: var(--space-24);
+    color: var(--color-text-secondary);
+  }
+
+  &__title {
+    margin-bottom: var(--space-16);
+    color: var(--color-text-primary);
+    font-size: type.$type--h-xxs;
+    line-height: type.$type--h-xxs-lh;
+    font-weight: type.$type-700;
+  }
+
+  &__sign {
+    vertical-align: top;
+    margin-top: var(--space-4);
+    display: inline-block;
+    font-size: type.$type-lg;
+    line-height: type.$type-lg-lh;
+    font-weight: type.$type-600;
+  }
+
+  &__amount {
+    font-size: type.$type--h-lg;
+    line-height: type.$type--h-lg-lh;
+    color: var(--ghost-accent-color);
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    margin-bottom: var(--space-32);
+    list-style: none;
+
+    li {
+      position: relative;
+      font-size: type.$type-xs;
+      line-height: type.$type-xs-lh;
+      font-weight: type.$type-500;
+      padding: 0 0 var(--space-16) var(--space-24);
+
+      &:before {
+        display: block;
+        position: absolute;
+        content: '✓';
+        left: 0;
+        top: calc(var(--space-4) * -1);
+        font-size: type.$type-sm;
+        line-height: type.$type-sm-lh;
+        font-weight: type.$type-800;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+}

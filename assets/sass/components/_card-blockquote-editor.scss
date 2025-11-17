@@ -1,0 +1,15 @@
+/*------------------------------------*\
+  Components > Card Blockquote / Editor
+\*------------------------------------*/
+
+@use "../settings/type";
+@use '../elements/blockquote';
+
+.kg-blockquote-alt {
+  @extend blockquote;
+
+  text-align: center;
+  font-style: italic;
+  font-size: type.$type--h-xs;
+  line-height: type.$type--h-xs-lh;
+}

@@ -1,0 +1,45 @@
+/*------------------------------------*\
+  Components > Card Header / Editor
+\*------------------------------------*/
+
+@use "../settings/type";
+@use "../vendor/mq";
+@use 'buttons';
+
+// .kg-header-card.kg-width-full {
+//   width: 100vw;
+// }
+
+.kg-content-wide {
+  .kg-header-card-content {
+    width: 100%;
+    margin: auto;
+  }
+
+  &:not(.kg-layout-split) .kg-header-card-content {
+    max-width: calc(var(--grid-width) - calc(var(--grid-margin-large) * 2));
+  }
+
+  &.kg-layout-split .kg-header-card-content {
+    @include mq.mq($from: desktop) {
+      max-width: calc(var(--grid-width) - calc(var(--grid-margin-large) * 2));
+    }
+  }
+}
+
+div.kg-header-card.kg-size-small h2.kg-header-card-header {
+  font-size: 3em;
+}
+
+div.kg-header-card h2.kg-header-card-header {
+  font-size: 4em;
+}
+
+div.kg-header-card.kg-size-large h2.kg-header-card-header {
+  font-size: 4em;
+}
+
+.kg-width-full .kg-header-card-text {
+  padding-left: var(--space-16) !important;
+  padding-right: var(--space-16) !important;
+}

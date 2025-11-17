@@ -1,0 +1,10 @@
+// *----------------------------------*\
+//  Settings > Grid
+// *----------------------------------*/
+
+:root {
+  --grid-width: 1142px;
+  --grid-outer-gutter: var(--space-16);
+  --grid-column-medium-gutter: var(--space-16);
+  --grid-column-large-gutter: var(--space-24);
+}

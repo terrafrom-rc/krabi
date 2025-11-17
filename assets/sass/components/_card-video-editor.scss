@@ -1,0 +1,12 @@
+// ------------------------------------
+// Components > Card Video / Editor
+// ------------------------------------
+
+@use "../settings/type";
+
+.c-content {
+  .kg-video-player * {
+    font-size: type.$type-sm;
+    line-height: type.$type-sm-lh;
+  }
+}

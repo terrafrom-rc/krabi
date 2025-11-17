@@ -1,0 +1,142 @@
+/*------------------------------------*\
+  Components > Content
+\*------------------------------------*/
+
+@use "../settings/type";
+@use "../tools/mixins";
+
+.c-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  word-break: break-word;
+
+  &--has-shadow {
+    mask-image: linear-gradient(to bottom, var(--color-text-primary) 30%, transparent 100%);
+  }
+
+  > * {
+    width: auto;
+    min-width: 100%;
+  }
+
+  > * {
+    font-size: type.$type-lg;
+    line-height: type.$type-lg-lh;
+  }
+
+  > * + * {
+    margin-top: var(--space-32);
+  }
+
+  // Remove space between full-width cards
+  // > .kg-width-full + .kg-width-full:not(.kg-width-full.kg-card-hascaption + .kg-width-full) {
+  //   margin-top: 0;
+  // }
+
+  a:not([class]) {
+    text-decoration: underline;
+
+    @include mixins.attention() {
+      text-decoration: none;
+    }
+  }
+
+  table {
+    font-size: type.$type-md;
+    line-height: type.$type-md-lh;
+    font-family: var(--type-body);
+  }
+
+  hr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: var(--space-4);
+    margin-bottom: 0;
+
+    &:before {
+      content: '. . .';
+      color: var(--color-text-primary);
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: var(--space-48);
+    font-family: var(--gh-font-heading, var(--type-heading));
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    + * {
+      margin-top: var(--space-8);
+    }
+  }
+
+  h1 {
+    font-size: type.$type--h-md;
+    line-height: type.$type--h-md-lh;
+
+    + h2, + h3, + h4, + h5, + h6 {
+      margin-top: var(--space-16);
+    }
+  }
+
+  h2 {
+    font-size: type.$type--h-sm;
+    line-height: type.$type--h-sm-lh;
+
+    + h3, + h4, + h5, + h6 {
+      margin-top: var(--space-16);
+    }
+  }
+
+  h3 {
+    font-size: type.$type--h-xs;
+    line-height: type.$type--h-xs-lh;
+
+    + h4, + h5, + h6 {
+      margin-top: var(--space-16);
+    }
+  }
+
+  h4 {
+    font-size: type.$type--h-xxs;
+    line-height: type.$type--h-xxs-lh;
+
+    + h5, + h6 {
+      margin-top: var(--space-8);
+    }
+  }
+
+  h5 {
+    font-size: type.$type--h-xxxs;
+    line-height: type.$type--h-xxxs-lh;
+
+    + h6 {
+      margin-top: var(--space-8);
+    }
+  }
+
+  dd, ol, ul {
+    padding-left: var(--space-8);
+    padding-right: var(--space-16);
+
+    > * + * {
+      margin-top: var(--space-8);
+    }
+
+    // Target Safari Only
+    &:not(:root:root) {
+      -webkit-padding-start: var(--space-16);
+    }
+  }
+
+  // Hide Ghost built-in upgrade call to action box
+  .gh-post-upgrade-cta {
+    display: none;
+    visibility: hidden;
+  }
+}

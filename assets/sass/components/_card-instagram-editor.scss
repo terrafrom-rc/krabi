@@ -1,0 +1,12 @@
+// ------------------------------------
+// Components > Card Instagram / Editor
+// ------------------------------------
+
+.instagram-media {
+  margin-bottom: 0 !important;
+  margin-top: var(--space-32) !important;
+
+  + script + figcaption {
+    background-color: var(--color-background-primary);
+  }
+}

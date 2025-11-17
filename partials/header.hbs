@@ -1,0 +1,54 @@
+<header class='c-header' id='header'>
+  {{> skip-to-content }}
+
+  <div class='o-grid o-grid--center'>
+    <div class='o-grid__col'>
+      <div class='c-header__inner'>
+        <div class='c-logo'>
+          {{#if @site.logo}}
+            <a href='{{ @site.url }}'>
+              <img class='c-logo__img' src='{{ @site.logo }}' alt='{{ @site.title }}' width='' height=''>
+            </a>
+          {{else}}
+            <a class='c-logo__link' href='{{ @site.url }}'>{{ @site.title }}</a>
+          {{/if}}
+        </div>
+
+        <nav class='c-nav-wrap' aria-label='Main menu'>
+          <ul class='c-nav c-nav--left o-plain-list'>
+            {{ navigation }}
+          </ul>
+
+          <ul class='c-nav c-nav--right o-plain-list'>
+            <li class='c-nav__item'>
+              <button class='c-nav__link toggle-search-button' aria-label='{{t 'Search' }}' data-ghost-search>
+                <div class='c-nav__icon-search'>
+                  {{> search-icon }}
+                </div>
+                <span>{{t 'Search' }}</span>
+              </button>
+            </li>
+
+            {{#if @site.members_enabled}}
+              {{#if @member}}
+                <li class='c-nav__item is-membership'><a href='#/portal/account' class='c-nav__link'>{{t 'Account' }}</a></li>
+              {{else}}
+                <li class='c-nav__item is-membership'><a href='#/portal/signin' class='c-btn c-btn--small c-btn--outline'>{{t 'Log in' }}</a></li>
+                {{#unless @site.members_invite_only}}
+                  <li class='c-nav__item is-membership'><a href='#/portal/signup' class='c-btn c-btn--small'>{{t 'Subscribe' }}</a></li>
+                {{/unless}}
+              {{/if}}
+            {{/if}}
+          </ul>
+        </nav>
+
+        <div class='js-nav-toggle c-nav-toggle'>
+          <span class='c-nav-toggle__icon'></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+{{> drop-down-js }}

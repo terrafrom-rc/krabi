@@ -1,0 +1,36 @@
+/*------------------------------------*\
+  Components > Tags
+\*------------------------------------*/
+
+@use "../settings/type";
+@use "../vendor/mq";
+
+.c-tags {
+  overflow: hidden;
+  margin-bottom: calc(var(--space-8) * -1);
+
+  @include mq.mq($from: tablet) {
+    margin-bottom: calc(var(--space-16) * -1);
+  }
+
+  a {
+    float: left;
+    font-size: type.$type-xs;
+    line-height: type.$type-xs-lh;
+    font-weight: type.$type-500;
+    letter-spacing: var(--global-letter-spacing);
+    padding: var(--space-8) var(--space-16);
+    margin-right: var(--space-8);
+    margin-bottom: var(--space-8);
+    border-radius: var(--global-border-radius);
+    background-color: var(--color-background-secondary);
+    box-shadow: inset 0 0 0 .5px var(--color-border-primary);
+
+    @include mq.mq($from: tablet) {
+      padding: var(--space-8) var(--space-24);
+      margin-right: var(--space-16);
+      margin-bottom: var(--space-16);
+      line-height: type.$type-md-lh;
+    }
+  }
+}

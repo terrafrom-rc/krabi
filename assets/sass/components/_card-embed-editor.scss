@@ -1,0 +1,15 @@
+/*------------------------------------*\
+  Components > Card Embed / Editor
+\*------------------------------------*/
+
+.kg-embed-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}

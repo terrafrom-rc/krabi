@@ -1,0 +1,47 @@
+// ------------------------------------
+// Components > Card Audio / Editor
+// ------------------------------------
+
+@use "../settings/type";
+@use "../vendor/mq";
+
+.c-content {
+  .kg-audio-card {
+    padding: var(--space-24);
+    border-radius: var(--global-border-radius);
+    background: var(--color-background-secondary);
+    box-shadow: inset 0 0 0 .5px var(--color-border-primary);
+
+    @include mq.mq($until: tablet) {
+      flex-wrap: wrap;
+    }
+  }
+
+  .kg-audio-title {
+    font-size: type.$type--h-xxs;
+    line-height: type.$type--h-xxs-lh;
+    font-weight: type.$type-600;
+  }
+
+  .kg-audio-player * {
+    font-size: type.$type-md;
+    line-height: type.$type-md-lh;
+  }
+
+  .kg-audio-seek-slider {
+    @include mq.mq($until: desktop) {
+      display: none;
+    }
+  }
+
+  .kg-audio-time {
+    color: var(--color-text-secondary);
+  }
+
+  .kg-audio-thumbnail {
+    width: var(--space-96);
+    min-width: var(--space-96);
+    margin: 0 var(--space-8) 0 0;
+    border-radius: var(--space-4);
+  }
+}

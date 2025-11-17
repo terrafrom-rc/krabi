@@ -1,0 +1,43 @@
+@use "../settings/type";
+
+/*------------------------------------*\
+  Trumbs > Typography
+\*------------------------------------*/
+
+// Size
+
+.u-type-sm {
+  font-size: type.$type-sm;
+  line-height: type.$type-sm-lh;
+}
+
+.u-type-xs {
+  font-size: type.$type-xs;
+  line-height: type.$type-xs-lh;
+}
+
+// Weight
+
+.u-type-500 {
+  font-weight: type.$type-500;
+}
+
+.u-type-600 {
+  font-weight: type.$type-600;
+}
+
+.u-underline {
+  text-decoration: underline;
+}
+
+.u-type-uppercase {
+  text-transform: uppercase;
+}
+
+.u-type-italic {
+  font-style: italic;
+}
+
+.u-type-small-caps {
+  font-variant: small-caps;
+}

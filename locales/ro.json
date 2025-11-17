@@ -1,0 +1,57 @@
+{
+  "Skip to content": "Sari la conținut",
+  "Scroll to Top": "Derulați până sus",
+  "Table of Contents": "Cuprins",
+
+  "Loading": "Se încarcă",
+  "More Posts": "Mai multe articole",
+
+  "Recent Posts": "Articole recente",
+  "Featured Posts": "Articole recomandate",
+  "Page Not Found": "Pagina nu a fost găsită",
+  "You might also like": "Te-ar mai putea interesa:",
+  "Latest": "Ultimele articole",
+  "Authors": "Autori",
+  "Navigation": "Navigație",
+  "Newsletter": "Buletin informativ",
+  "Published with {ghostLink} & {themeLink}": "Publicat cu {ghostLink} & {themeLink}",
+
+  "Share on Twitter": "Publică pe Twitter",
+  "Share on Facebook": "Publică pe Facebook",
+  "Share on LinkedIn": "Publică pe LinkedIn",
+  "Share on Pinterest": "Publică pe Pinterest",
+  "Share via Email": "Trimite prin e-mail",
+  "Copy link": "Copiază adresa",
+  "Link copied to clipboard": "Adresa a fost copiată în memorie",
+
+  "Search": "Caută",
+
+  "Comments": "Comentarii",
+
+  "Paid": "Plătit",
+  "Members": "Membrii",
+  "Public": "Public",
+
+  "Account": "Cont",
+  "Log In": "Conectează-te",
+  "Log Out": "Deconectează-te",
+  "Continue": "Continuă",
+  "Subscribe": "Abonează-te",
+  "Your email address": "Adresa ta de e-mail",
+  "Please check your inbox and click the link to confirm your subscription.": "Te rog verifică-ți contul de e-mail și dă click pe link-ul din mesaj  pentru a confirma abonarea.",
+  "Please enter a valid email address!": "Te rog să introduci o adresă de e-mail validă!",
+  "An error occurred, please try again later.": "A avut loc o eroare. Te rog să încerci mai târziu.",
+
+  "Already have an account?": "Ai deja un cont?",
+  "Don't have an account yet?": "Nu ai încă un cont?",
+
+  "This post is for paying subscribers only": "Acest articol este doar pentru abonații plătitori",
+  "This post is for subscribers only": "Acest articol este doar pentru abonați",
+  "This post is for subscribers on the ": "Această postare este pentru abonații de pe ",
+  "This page is for paying subscribers only": "Această pagină este doar pentru abonații plătitori",
+  "This page is for subscribers only": "Această pagină este doar pentru abonați",
+  "This page is for subscribers on the ": "Această pagină este pentru abonații de pe ",
+  "Upgrade your account": "Actualizați-vă contul",
+
+  "Join the newsletter to receive the latest updates in your inbox.": "Înscrie-te la newsletter pentru a primi ultimele noutăți pe e-mail."
+}

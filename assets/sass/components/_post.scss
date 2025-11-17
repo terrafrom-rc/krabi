@@ -1,0 +1,17 @@
+/*------------------------------------*\
+  Components > Post
+\*------------------------------------*/
+
+@use "../vendor/mq";
+
+.c-post {
+  > * + * {
+    margin-top: var(--space-32);
+  }
+
+  @include mq.mq($until: desktop) {
+    .c-subscribe--center {
+      display: none;
+    }
+  }
+}

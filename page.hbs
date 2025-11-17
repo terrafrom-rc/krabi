@@ -1,0 +1,35 @@
+{{!< default}}
+
+{{#contentFor 'title'}}{{ meta_title }}{{/contentFor}}
+
+{{#post}}
+
+<article class='c-{{ post_class }}'>
+  {{#match @page.show_title_and_feature_image}}
+    {{> post-header }}
+  {{/match}}
+
+  {{#if access}}
+    {{#if @custom.show_table_of_contents_on_all_pages}}
+      {{> table-of-contents }}
+    {{/if}}
+
+    {{#has tag='#table-of-content'}}
+      {{> table-of-contents}}
+    {{/has}}
+  {{/if}}
+
+  <section class='c-content {{#unless access}} c-content--has-shadow {{/unless}}'>
+    {{ content }}
+  </section>
+
+  {{!--
+    If the page is published for subscribers and paid members and the visitor is not one of those, show the upgrade box
+  --}}
+  {{#unless access}}
+    {{> page-upgrade-cta }}
+  {{/unless}}
+  <hr>
+</article>
+
+{{/post}}

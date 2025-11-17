@@ -1,0 +1,49 @@
+/*------------------------------------*\
+  Components > Share Icons
+\*------------------------------------*/
+
+@use "../settings/type";
+@use "../tools/mixins";
+@use "../vendor/mq";
+
+.c-share {
+  display: flex;
+
+  @include mq.mq($until: tablet) {
+    margin-top: var(--space-16);
+    justify-content: flex-start;
+  }
+
+  @include mq.mq($from: tablet) {
+    margin-left: auto;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: var(--space-8);
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: type.$type--h-xxxs;
+    width: var(--space-40);
+    height: var(--space-40);
+    border-radius: 100%;
+    background-color: var(--color-background-secondary);
+    box-shadow: inset 0 0 0 .5px var(--color-border-primary);
+
+    @include mixins.attention() {
+      .c-share__icon {
+        fill: var(--color-text-primary);
+      }
+    }
+  }
+
+  &__icon {
+    fill: var(--color-text-secondary);
+    transition: fill var(--global-transition);
+  }
+}

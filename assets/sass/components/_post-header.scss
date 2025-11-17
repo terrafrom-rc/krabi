@@ -1,0 +1,150 @@
+/*------------------------------------*\
+  Components > Post Hero
+\*------------------------------------*/
+
+@use "../settings/type";
+@use "../tools/mixins";
+@use "../vendor/mq";
+
+.c-post-media {
+  margin-bottom: var(--space-32);
+
+  &--no-caption {
+    box-shadow: -8px 16px 24px -8px rgba(0, 0, 0, .08);
+  }
+
+  &__wrap {
+    position: relative;
+    background-color: var(--color-background-secondary);
+    border-radius: var(--global-border-radius);
+
+    &:after {
+      content: '';
+      display: block;
+      height: 0;
+      width: 100%;
+      padding-bottom: 56.25%;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--global-border-radius);
+  }
+
+  &--with-caption &__image {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &__caption {
+    width: 100%;
+    text-align: center;
+    padding: var(--space-16);
+    color: var(--color-text-secondary);
+    font-size: type.$type-xs;
+    line-height: type.$type-xs-lh;
+    font-weight: type.$type-500;
+    border-bottom-left-radius: var(--global-border-radius);
+    border-bottom-right-radius: var(--global-border-radius);
+    letter-spacing: var(--global-letter-spacing);
+    background-color: var(--color-background-secondary);
+
+    a {
+      color: var(--color-text-primary);
+      text-decoration: underline;
+
+      @include mixins.attention() {
+        color: var(--ghost-accent-color);
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.c-post-header {
+  margin-bottom: var(--space-32);
+
+  &__title {
+    margin-bottom: 0;
+    font-size: type.$type--h-sm;
+    line-height: type.$type--h-sm-lh;
+    font-family: var(--gh-font-heading, var(--type-heading));
+
+    @include mq.mq($from: tablet) {
+      font-size: type.$type--h-md;
+      line-height: type.$type--h-md-lh;
+    }
+
+    @include mq.mq($from: desktop) {
+      font-size: type.$type--h-lg;
+      line-height: type.$type--h-lg-lh;
+    }
+  }
+
+  &__excerpt {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: var(--space-16);
+    color: var(--color-text-secondary);
+    font-size: type.$type--h-xxs;
+    line-height: type.$type--h-xxs-lh;
+
+    @include mq.mq($from: desktop) {
+      font-size: type.$type--h-xs;
+      line-height: type.$type--h-xs-lh;
+    }
+  }
+
+  &__meta {
+    margin-top: var(--space-32);
+    font-size: type.$type-xs;
+    line-height: type.$type-xs-lh;
+    letter-spacing: var(--global-letter-spacing);
+
+    @include mq.mq($from: tablet) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__authors {
+    display: flex;
+    grid-gap: var(--space-8);
+    align-items: center;
+  }
+
+  &__authors-images {
+    display: flex;
+    grid-gap: var(--space-8);
+  }
+
+  &__authors-names {
+    font-weight: type.$type-600;
+    color: var(--color-text-secondary);
+
+    a {
+      color: var(--color-text-primary);
+    }
+  }
+
+  &__author-image-wrap {
+    display: block;
+    width: var(--space-32);
+    height: var(--space-32);
+    border-radius: 100%;
+    background-color: var(--color-background-secondary);
+  }
+
+  &__author-image {
+    width: var(--space-32);
+    height: var(--space-32);
+    object-fit: cover;
+    border-radius: 100%;
+  }
+}

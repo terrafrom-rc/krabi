@@ -1,0 +1,20 @@
+<section class='c-post-upgrade-cta'>
+  {{#has visibility='members'}}
+    <h2 class='c-post-upgrade-cta__title'>{{t 'This page is for subscribers only'}}</h2>
+  {{/has}}
+
+  {{#has visibility='paid'}}
+    <h2 class='c-post-upgrade-cta__title'>{{t 'This page is for paying subscribers only'}}</h2>
+  {{/has}}
+
+  {{#has visibility='tiers'}}
+    <h2 class='c-post-upgrade-cta__title'>{{t 'This page is for subscribers on the '}}{{ tiers }}</h2>
+  {{/has}}
+
+  {{#if @member}}
+    <a class='c-btn' href='#/portal/account/plans'>{{t 'Upgrade your account'}}</a>
+  {{else}}
+    <a class='c-btn' href='#/portal/signup'>{{t 'Subscribe'}}</a>
+    <p class='u-type-xs u-mt-16'>{{t 'Already have an account?'}} <a href='#/portal/signin' class='u-underline u-type-500'>{{t 'Log in'}}</a></p>
+  {{/if}}
+</section>

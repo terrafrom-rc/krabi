@@ -1,0 +1,16 @@
+{{!< default}}
+
+{{#contentFor 'title'}}{{ meta_title }}{{/contentFor}}
+
+{{#tag}}
+  <div class='c-archive'>
+    <h1 class='c-archive__title'>{{ name }}</h1>
+    {{#if description}}
+      <p class='c-archive__description'>{{ description }}</p>
+    {{/if}}
+  </div>
+{{/tag}}
+
+{{> loop }}
+
+{{ pagination }}

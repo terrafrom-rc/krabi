@@ -1,0 +1,17 @@
+/*------------------------------------*\
+  Components > Header
+\*------------------------------------*/
+
+.c-header {
+  position: relative;
+  padding: var(--space-20) 0;
+  box-shadow: 0 .5px 0 0 var(--color-border-primary);
+  background-color: var(--color-background-secondary);
+
+  &__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

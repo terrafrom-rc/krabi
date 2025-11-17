@@ -1,0 +1,65 @@
+/*------------------------------------*\
+  Components > Drop Caps
+\*------------------------------------*/
+
+.u-drop-cap--small,
+.u-drop-cap--medium,
+.u-drop-cap--large,
+.u-drop-cap--block-small,
+.u-drop-cap--block-medium,
+.u-drop-cap--block-large {
+  &::first-letter {
+    float: left;
+    margin-top: var(--space-8);
+    font-family: Georgia, serif;
+  }
+}
+
+.u-drop-cap--small::first-letter {
+  font-size: 55px;
+  line-height: 40px;
+  margin-right: var(--space-8);
+}
+
+.u-drop-cap--medium::first-letter {
+  font-size: 98px;
+  line-height: 66px;
+  margin-right: var(--space-12);
+}
+
+.u-drop-cap--large::first-letter {
+  font-size: 132px;
+  line-height: 95px;
+  margin-right: var(--space-16);
+}
+
+.u-drop-cap--block-small,
+.u-drop-cap--block-medium,
+.u-drop-cap--block-large {
+  &::first-letter {
+    border-radius: var(--space-4);
+    color: var(--color-background-primary);
+    background: var(--color-text-primary);
+  }
+}
+
+.u-drop-cap--block-small::first-letter {
+  font-size: 28px;
+  line-height: 20px;
+  padding: 10px;
+  margin-right: var(--space-12);
+}
+
+.u-drop-cap--block-medium::first-letter {
+  font-size: 52px;
+  line-height: 38px;
+  padding: var(--space-16);
+  margin-right: var(--space-16);
+}
+
+.u-drop-cap--block-large::first-letter {
+  font-size: 78px;
+  line-height: 58px;
+  padding: 20px;
+  margin-right: var(--space-16);
+}

@@ -1,0 +1,44 @@
+/*------------------------------------*\
+  Elements > code & pre
+\*------------------------------------*/
+
+@use "../settings/type";
+
+p code,
+li code {
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--global-border-radius);
+  background-color: var(--color-background-secondary);
+}
+
+code,
+code[class*='language-'] {
+  font-size: type.$type-md;
+  line-height: type.$type-md-lh;
+  text-shadow: none;
+  color: var(--color-text-primary);
+}
+
+pre,
+pre[class*='language-'],
+.kg-code-card {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--global-border-radius);
+}
+
+pre,
+pre[class*='language-'] {
+  padding: var(--space-32);
+  margin-top: var(--space-32);
+  margin-bottom: 0;
+  background-color: var(--color-background-secondary);
+}
+
+.kg-code-card pre {
+  margin-top: 0;
+}
+
+.token.operator {
+  background-color: transparent;
+}

@@ -1,0 +1,65 @@
+/*------------------------------------*\
+  Components > Teaser
+\*------------------------------------*/
+
+@use "../settings/type";
+@use "../tools/mixins";
+
+.c-teaser {
+  display: flex;
+  align-items: center;
+  padding: var(--space-24);
+  border-radius: var(--global-border-radius);
+  background-color: var(--color-background-secondary);
+  box-shadow: inset 0 0 0 .5px var(--color-border-primary);
+
+  &:not(:last-child) {
+    margin-bottom: var(--space-24);
+  }
+
+  &__media {
+    margin-left: var(--space-16);
+    border-radius: var(--global-border-radius);
+    background-color: var(--color-background-primary);
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__image {
+    display: block;
+    width: var(--space-80);
+    height: var(--space-64);
+    object-fit: cover;
+    border-radius: var(--global-border-radius);
+    background-color: var(--color-background-primary);
+    box-shadow: var(--space-4) var(--space-4) 0 var(--color-background-primary);
+  }
+
+  &__title {
+    display: inline;
+    font-size: type.$type-md;
+    line-height: type.$type-md-lh;
+    font-weight: type.$type-700;
+    font-family: var(--gh-font-heading, var(--type-heading));
+  }
+
+  &__date {
+    display: block;
+    color: var(--color-text-secondary);
+    font-size: type.$type-xs;
+    line-height: type.$type-xs-lh;
+    font-weight: type.$type-500;
+    margin-top: var(--space-8);
+  }
+
+  @include mixins.attention() {
+    color: var(--color-text-primary);
+
+    .c-teaser__title {
+      color: var(--color-text-primary);
+      text-decoration: underline;
+    }
+  }
+}

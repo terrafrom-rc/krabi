@@ -1,0 +1,88 @@
+/*------------------------------------*\
+  Components > Tag Card
+\*------------------------------------*/
+
+@use "../settings/type";
+@use "../tools/mixins";
+
+.c-tag-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: var(--space-32);
+  background-color: var(--color-background-secondary);
+  box-shadow: inset 0 0 0 1px var(--color-border-primary);
+
+  &-wrap {
+    display: flex;
+  }
+
+  &__media {
+    background-color: var(--color-background-secondary);
+  }
+
+  &__image-wrap {
+    display: block;
+    position: relative;
+    padding-top: 56.25%;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    padding: var(--space-32) var(--space-32) 0 var(--space-32);
+  }
+
+  &__title {
+    font-size: type.$type--h-xxxs;
+    line-height: type.$type--h-xxxs-lh;
+    font-weight: type.$type-700;
+    font-family: var(--gh-font-heading, var(--type-heading));
+  }
+
+  &__url:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  &__description {
+    font-size: type.$type-sm;
+    line-height: type.$type-sm-lh;
+    font-weight: type.$type-500;
+    color: var(--color-text-secondary);
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-16);
+  }
+
+  &__meta {
+    font-size: type.$type-xs;
+    line-height: type.$type-xs-lh;
+    font-weight: type.$type-500;
+    color: var(--color-text-secondary);
+    margin: var(--space-16) var(--space-32) 0;
+    padding: var(--space-16) 0 var(--space-32) 0;
+    border-top: .5px solid var(--color-border-primary);
+  }
+
+  @include mixins.attention() {
+    .c-tag-card__url {
+      text-decoration: underline;
+    }
+  }
+}

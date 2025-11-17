@@ -1,0 +1,49 @@
+/*------------------------------------*\
+  Elements > Typography
+\*------------------------------------*/
+
+@use "../settings/type";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: type.$type-800;
+}
+
+h1 {
+  font-size: type.$type--h-xl;
+  line-height: type.$type--h-xl-lh;
+}
+
+h2 {
+  font-size: type.$type--h-lg;
+  line-height: type.$type--h-lg-lh;
+}
+
+h3 {
+  font-size: type.$type--h-md;
+  line-height: type.$type--h-md-lh;
+}
+
+h4 {
+  font-size: type.$type--h-sm;
+  line-height: type.$type--h-sm-lh;
+}
+
+h5 {
+  font-size: type.$type--h-xs;
+  line-height: type.$type--h-xs-lh;
+}
+
+h6 {
+  font-size: type.$type--h-xxs;
+  line-height: type.$type--h-xxs-lh;
+}
+
+b,
+strong {
+  font-weight: type.$type-700;
+}

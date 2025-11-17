@@ -1,0 +1,37 @@
+<script>
+  var dropDown_list = [],
+    latest_navigation_item,
+    nav_list = document.querySelectorAll('.c-nav--left .c-nav__item');
+
+  var newMenuList = [];
+  var menuTree = {};
+
+  nav_list.forEach( (item, index) => {
+    if(item.childNodes[0].innerText.startsWith('-')) {
+      if(menuTree[newMenuList.length - 1]) {
+        menuTree[newMenuList.length - 1].push(item);
+      } else {
+        menuTree[newMenuList.length - 1] = [item];
+      }
+    } else {
+      newMenuList.push(item);
+    }
+  });
+
+  nav_list = newMenuList.map((item, index) => {
+    if(menuTree[index]) {
+      let dropdown = document.createElement('ul');
+      dropdown.className = 'c-nav__dropDown o-plain-list';
+
+      menuTree[index].forEach(child => {
+        dropDown_item_text = child.childNodes[0].innerText;
+        child.childNodes[0].innerText = dropDown_item_text.replace('- ', '');
+        dropdown.appendChild(child);
+      });
+
+      item.className += ' c-nav__item--hasDropDown';
+      item.appendChild(dropdown);
+    }
+    return item;
+  });
+</script>

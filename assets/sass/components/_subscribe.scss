@@ -1,0 +1,99 @@
+/*------------------------------------*\
+  Components > Subscribe Form
+\*------------------------------------*/
+
+@use "../settings/type";
+@use "../vendor/mq";
+@use 'buttons';
+
+.c-subscribe {
+  overflow: hidden;
+  position: relative;
+  word-break: break-word;
+  padding: var(--space-32);
+  color: var(--color-text-white);
+  border-radius: var(--global-border-radius);
+  background-color: var(--color-background-subscribe-form);
+
+  &__content {
+    z-index: 1;
+    position: relative;
+
+    &--center {
+      @include mq.mq($from: tablet) {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__title {
+    font-size: type.$type--h-md;
+    line-height: type.$type--h-md-lh;
+    font-family: var(--gh-font-heading, var(--type-heading));
+  }
+
+  &__icon {
+    position: absolute;
+    top: calc(var(--space-128) * -1);
+    right: calc(var(--space-80) * -1);
+
+    svg {
+      fill: var(--color-subscribe-form-icon);
+    }
+  }
+}
+
+.c-subscribe-form {
+  .c-alert {
+    display: none;
+  }
+
+  .c-btn {
+    width: 100%;
+    @extend .c-btn--loading;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &.loading .c-btn {
+    &:after {
+      display: block;
+    }
+  }
+
+  &.success .c-alert--success,
+  &.invalid .c-alert--invalid,
+  &.error   .c-alert--error  {
+    display: block;
+  }
+}
+
+@include mq.mq($from: tablet) {
+  .c-subscribe-form--compact {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    .form-group {
+      display: flex;
+    }
+
+    .c-btn {
+      flex: 3;
+      line-height: initial;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .c-subscribe-form__input[type=email] {
+      margin: 0;
+      border-right-width: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}

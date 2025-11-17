@@ -1,0 +1,231 @@
+/*------------------------------------*\
+  Components > Site Navigation
+\*------------------------------------*/
+
+@use "../settings/type";
+@use "../tools/mixins";
+@use "../vendor/mq";
+
+.c-nav-wrap {
+  @include mq.mq($until: desktop) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    padding-top: var(--space-72);
+    background-color: var(--color-background-primary);
+    // display: none;
+    // opacity: 0;
+    visibility: hidden;
+    transform: scale(.96);
+
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+      display: block;
+      transform: scale(1);
+      transition: all calc(var(--global-transition) / 2) cubic-bezier(.694, 0, .335, 1);
+    }
+  }
+
+  @include mq.mq($from: desktop) {
+    display: block;
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.c-nav {
+  @include mq.mq($until: desktop) {
+    width: 100%;
+    padding-left: var(--space-32);
+    padding-right: var(--space-32);
+  }
+
+  @include mq.mq($from: desktop) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &--left {
+      justify-content: end;
+    }
+
+    &--right {
+      justify-content: flex-end;
+    }
+  }
+
+  &__dropDown {
+    @include mq.mq($until: desktop) {
+      margin-left: var(--space-16);
+
+      .c-nav__item {
+        margin-bottom: 0;
+      }
+    }
+
+    @include mq.mq($from: desktop) {
+      position: absolute;
+      top: var(--space-16);
+      z-index: 10;
+      opacity: 0;
+      visibility: hidden;
+      padding: var(--space-16);
+      border-radius: var(--global-border-radius);
+      background-color: var(--color-background-secondary);
+      border: .5px solid var(--color-border-primary);
+
+      .c-nav__item {
+        margin: 0 !important;
+      }
+
+      .c-nav__link {
+        padding: var(--space-8) var(--space-16);
+        border-radius: var(--global-border-radius);
+
+        @include mixins.attention() {
+          background-color: var(--color-background-primary);
+        }
+      }
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      @include mq.mq($from: desktop) {
+        margin-right: var(--space-24);
+      }
+    }
+
+    @include mq.mq($until: desktop) {
+      margin-bottom: var(--space-16);
+    }
+
+    &--hasDropDown {
+      @include mq.mq($from: desktop) {
+        position: relative;
+
+        > .c-nav__link {
+          &:after {
+            content: '↓';
+            padding-left: var(--space-4);
+          }
+        }
+
+        &:hover,
+        &:focus-within {
+          > .c-nav__link {
+            color: var(--color-text-primary);
+          }
+
+          .c-nav__dropDown {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    font-size: type.$type-xs;
+    line-height: type.$type-xs-lh;
+    font-weight: type.$type-600;
+    white-space: nowrap;
+    color: var(--color-text-secondary);
+    letter-spacing: var(--global-letter-spacing);
+    transition: color var(--global-faster-transition);
+
+    @include mq.mq($until: desktop) {
+      font-size: type.$type-sm;
+      line-height: type.$type-sm-lh;
+    }
+
+    &--current {
+      color: var(--color-text-primary);
+
+      .home-template & {
+        color: var(--color-text-secondary);
+      }
+    }
+
+    @include mixins.attention() {
+      color: var(--color-text-primary);
+    }
+  }
+
+  &__icon-search {
+    width: var(--space-16);
+    height: var(--space-16);
+    margin-right: var(--space-4);
+  }
+}
+
+.c-nav-toggle {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 10;
+  height: var(--space-16);
+  width: var(--space-24);
+  cursor: pointer;
+  transform: translateY(-50%);
+
+  @include mq.mq($from: desktop) {
+    display: none;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 0;
+    height: 1px;
+    width: var(--space-24);
+    background: var(--color-text-primary);
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      height: 100%;
+      background-color: inherit;
+    }
+
+    &:before { transform: translateY(16px) }
+    &:after { transform: translateY(7px); }
+
+    .c-nav-toggle--close & {
+      height: 2px;
+      background-color: transparent;
+
+      &:before,
+      &:after {
+        position: relative;
+        visibility: visible;
+        background: var(--color-text-primary);
+      }
+
+      &:before {
+        top: 9px;
+        transform: rotate(-45deg);
+      }
+
+      &:after {
+        top: 7px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

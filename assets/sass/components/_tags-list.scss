@@ -1,0 +1,62 @@
+/*------------------------------------*\
+  Components > Tags List
+\*------------------------------------*/
+
+@use "../settings/type";
+@use "../tools/mixins";
+@use "../vendor/mq";
+
+.c-tags-list-container {
+  margin-bottom: var(--space-32);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .04);
+  background-color: var(--color-background-secondary);
+}
+
+.c-tags-list-wrap {
+  position: relative;
+  mask-image: linear-gradient(to right, var(--color-text-primary) 97%, transparent 100%);
+}
+
+.c-tags-list {
+  display: flex;
+  align-items: baseline;
+
+  overflow-x: scroll;
+  -ms-overflow-style: none;  // Edge
+  scrollbar-width: none;     // Firefox
+
+  &::-webkit-scrollbar { display: none; }
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  &__item {
+    font-size: type.$type-xs;
+    line-height: type.$type-xs-lh;
+    font-weight: type.$type-600;
+    white-space: nowrap;
+    letter-spacing: var(--global-letter-spacing);
+  }
+
+  &__link {
+    display: block;
+    padding: var(--space-24) 0;
+    margin-right: var(--space-16);
+    color: var(--color-text-secondary);
+    transition: color var(--global-faster-transition);
+
+    @include mq.mq($from: desktop) {
+      margin-right: var(--space-24);
+    }
+
+    &--current {
+      color: var(--color-text-primary);
+      box-shadow: inset 0 -2px var(--color-text-primary);
+    }
+
+    @include mixins.attention() {
+      color: var(--color-text-primary);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+// ------------------------------------
+// Components > Card General Style / Editor
+// ------------------------------------
+
+@use "../settings/type";
+
+.kg-card figcaption {
+  width: 100%;
+  text-align: center;
+  padding: var(--space-16);
+  color: var(--color-text-secondary);
+  font-size: type.$type-xs;
+  line-height: type.$type-xs-lh;
+  font-weight: type.$type-500;
+  letter-spacing: var(--global-letter-spacing);
+  background-color: var(--color-background-secondary);
+}
+
+.kg-width-wide,
+.kg-width-full {
+  width: 100%;
+}

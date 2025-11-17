@@ -1,0 +1,17 @@
+/*------------------------------------*\
+  Elements > Page
+\*------------------------------------*/
+
+@use "../settings/type";
+
+body {
+  direction: ltr;
+  color: var(--color-text-primary);
+  font-size: type.$type-md;
+  font-family: var(--type-body);
+  line-height: type.$line-height-base;
+  background-color: var(--color-background-primary);
+
+  -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}

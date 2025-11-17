@@ -1,0 +1,17 @@
+/*------------------------------------*\
+  Elements > RTL Specefic Customization
+\*------------------------------------*/
+
+@use "../settings/type";
+
+:lang(ar) * {
+  letter-spacing: initial !important;
+}
+
+:lang(ar) .c-nav__item {
+  font-size: type.$type-sm;
+}
+
+:lang(ar) .icon--ei-chevron-right .icon__cnt {
+  transform: scaleX(-1);
+}

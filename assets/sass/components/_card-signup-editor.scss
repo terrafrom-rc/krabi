@@ -1,0 +1,41 @@
+// ------------------------------------
+// Components > Card Signup / Editor
+// ------------------------------------
+
+@use "../settings/type";
+@use "../vendor/mq";
+
+// .kg-signup-card.kg-width-full {
+//   width: 100vw;
+// }
+
+.kg-content-wide {
+  .kg-signup-card-content {
+    width: 100%;
+    margin: auto;
+    padding: 0 var(--space-32);
+  }
+
+  &:not(.kg-layout-split) .kg-signup-card-content {
+    max-width: calc(var(--grid-width) - calc(var(--grid-margin-large) * 2));
+  }
+
+  &.kg-layout-split .kg-signup-card-content {
+    @include mq.mq($from: desktop) {
+      max-width: calc(var(--grid-width) - calc(var(--grid-margin-large) * 2));
+    }
+  }
+}
+
+div.kg-signup-card.kg-width-full h2.kg-signup-card-heading {
+  font-size: clamp(2.8rem,5.6vw,4rem);
+}
+
+.kg-signup-card-disclaimer,
+.kg-signup-card h2+.kg-signup-card-subheading {
+  font-family: var(--type-body);
+}
+
+.kg-signup-card-input {
+  margin-bottom: 0!important;
+}

@@ -1,0 +1,27 @@
+/*------------------------------------*\
+  Trumbs > Colors
+\*------------------------------------*/
+
+.u-color-gray {
+  color: var(--color-text-secondary);
+}
+
+.u-color-error {
+  color: var(--color-text-error);
+}
+
+.u-color-success {
+  color: var(--color-text-success);
+}
+
+.u-bg-secondary {
+  background-color: var(--color-background-secondary);
+}
+
+.u-border {
+  box-shadow: inset 0 0 0 .5px var(--color-border-primary);
+}
+
+.u-border-radius {
+  border-radius: var(--global-border-radius);
+}

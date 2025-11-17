@@ -1,0 +1,78 @@
+{{!< default}}
+
+{{#contentFor 'title'}}{{ meta_title }}{{/contentFor}}
+
+{{#author}}
+  <div class='c-author'>
+    {{#if profile_image}}
+      <div class='c-author__media'>
+        <img class='c-author__image lazyload' data-src='{{ img_url profile_image size='profile-image-large' }}' alt='' width='80' height='80'>
+      </div>
+    {{/if}}
+
+    <div class='c-author__content'>
+      <h1 class='c-author__title'>{{ name }}</h1>
+      {{#if bio}}
+        <p class='c-author__bio'>{{ bio }}</p>
+      {{/if}}
+
+      <ul class='o-plain-list c-author__links'>
+        {{#if website}}
+          <li class='c-author__links-item'><a href='{{ website }}'>Website</a></li>
+        {{/if}}
+
+        {{#if twitter}}
+          <li class='c-author__links-item' style="font-size: 18px;"><a href='{{social_url type="twitter"}}'>𝕏</a></li>
+        {{/if}}
+
+        {{#if facebook}}
+          <li class='c-author__links-item'><a href='{{social_url type="facebook"}}'>Facebook</a></li>
+        {{/if}}
+
+        {{#if linkedin}}
+          <li class='c-author__links-item'><a href='{{social_url type="linkedin"}}'>LinkedIn</a></li>
+        {{/if}}
+
+        {{#if bluesky}}
+          <li class='c-author__links-item'><a href='{{social_url type="bluesky"}}'>Bluesky</a></li>
+        {{/if}}
+
+        {{#if threads}}
+          <li class='c-author__links-item'><a href='{{social_url type="threads"}}'>Threads</a></li>
+        {{/if}}
+
+        {{#if mastodon}}
+          <li class='c-author__links-item'><a href='{{social_url type="mastodon"}}'>Mastodon</a></li>
+        {{/if}}
+
+        {{#if tiktok}}
+          <li class='c-author__links-item'><a href='{{social_url type="tiktok"}}'>TikTok</a></li>
+        {{/if}}
+
+        {{#if youtube}}
+          <li class='c-author__links-item'><a href='{{social_url type="youtube"}}'>YouTube</a></li>
+        {{/if}}
+
+        {{#if instagram}}
+          <li class='c-author__links-item'><a href='{{social_url type="instagram"}}'>Instagram</a></li>
+        {{/if}}
+
+        {{#if location}}
+          <li class='c-author__links-item'>
+            <span class='c-author__links-icon' data-icon='ei-location' data-size='s'></span>
+            {{ location }}
+          </li>
+        {{/if}}
+
+        <li class='c-author__links-item'>
+          <span class='c-author__links-icon' data-icon='ei-chart' data-size='s'></span>
+          {{plural ../pagination.total empty='No Posts' singular='% Post' plural='% Posts'}}
+        </li>
+      </ul>
+    </div>
+  </div>
+{{/author}}
+
+{{> loop }}
+
+{{ pagination }}

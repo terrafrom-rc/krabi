@@ -1,0 +1,33 @@
+/*------------------------------------*\
+  Components > Alerts
+\*------------------------------------*/
+
+@use "../settings/type";
+
+.c-alert {
+  font-size: type.$type-xs;
+  line-height: type.$type-xs-lh;
+  font-weight: type.$type-500;
+  text-align: center;
+  margin-top: var(--space-16);
+  padding: var(--space-16);
+  border-radius: var(--global-border-radius);
+  background-color: var(--color-background-primary);
+  box-shadow: inset 0 0 0 .5px var(--color-border-primary);
+
+  &:empty {
+    display: none;
+  }
+}
+
+.c-alert--success {
+  color: var(--color-text-success);
+}
+
+.c-alert--invalid {
+  color: var(--color-text-error);
+}
+
+.c-alert--error {
+  color: var(--color-text-error);
+}

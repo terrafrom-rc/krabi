@@ -1,0 +1,11 @@
+/*------------------------------------*\
+  Components > Pagination
+\*------------------------------------*/
+
+@use "../vendor/mq";
+
+.c-pagination {
+  @include mq.mq($until: desktop) {
+    margin-bottom: var(--space-32);
+  }
+}

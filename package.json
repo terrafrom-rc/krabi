@@ -1,0 +1,129 @@
+{
+  "name": "krabi",
+  "description": "Premium Ghost Theme",
+  "demo": "https://krabi.aspirethemes.com/",
+  "version": "1.2.1",
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "keywords": [
+    "ghost-theme"
+  ],
+  "type": "module",
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "dependencies": {
+    "@primer/css": "^22.0.2",
+    "bower": "^1.8.14",
+    "clipboard": "^2.0.11",
+    "evil-icons": "^1.10.1",
+    "lazysizes": "^5.3.2",
+    "normalize.css": "^8.0.1",
+    "prismjs": "^1.30.0",
+    "sass-mq": "^7.0.0",
+    "tocbot": "^4.36.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "gulp": "^5.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.1.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-rename": "^2.1.0",
+    "gulp-replace": "^1.1.4",
+    "gulp-rtlcss": "^2.0.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^6.1.0",
+    "jshint": "^2.13.6",
+    "jshint-stylish": "^2.2.1",
+    "sass": "^1.90.0"
+  },
+  "author": {
+    "name": "Aspire Themes",
+    "email": "ahmad@aspirethemes.com",
+    "url": "https://aspirethemes.com/"
+  },
+  "config": {
+    "custom": {
+      "linkedin_page": {
+        "type": "text",
+        "default": ""
+      },
+      "bluesky_page": {
+        "type": "text",
+        "default": ""
+      },
+      "threads_page": {
+        "type": "text",
+        "default": ""
+      },
+      "mastodon_page": {
+        "type": "text",
+        "default": ""
+      },
+      "tiktok_page": {
+        "type": "text",
+        "default": ""
+      },
+      "youtube_page": {
+        "type": "text",
+        "default": ""
+      },
+      "instagram_page": {
+        "type": "text",
+        "default": ""
+      },
+      "pinterest_page": {
+        "type": "text",
+        "default": ""
+      },
+      "show_scroll_to_top_button": {
+        "type": "boolean",
+        "default": false
+      },
+      "show_table_of_contents_on_all_posts": {
+        "type": "boolean",
+        "default": false,
+        "group": "post"
+      },
+      "show_table_of_contents_on_all_pages": {
+        "type": "boolean",
+        "default": false,
+        "group": "post"
+      }
+    },
+    "card_assets": {
+      "exclude": [
+        "button",
+        "blockquote",
+        "bookmark",
+        "image",
+        "gallery"
+      ]
+    },
+    "posts_per_page": 8,
+    "image_sizes": {
+      "profile-image-small": {
+        "width": 128
+      },
+      "profile-image-medium": {
+        "width": 256
+      },
+      "profile-image-large": {
+        "width": 320
+      },
+      "feature-image-small": {
+        "width": 346
+      },
+      "feature-image-medium": {
+        "width": 692
+      },
+      "feature-image-large": {
+        "width": 1384
+      }
+    }
+  }
+}
