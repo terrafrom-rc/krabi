@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   deploy:
-    runs-on: tenki-standard-autoscale
+    runs-on: tenki-invalid-runner
     steps:
       - uses: actions/checkout@v4
       - name: Deploy to Krabi Demo
