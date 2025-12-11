@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   deploy:
-    runs-on: tenki-local-inval
+    runs-on: tenki-local-ubuntu-22.04-small-2c-4g
     steps:
       - uses: actions/checkout@v4
       - name: Deploy to Krabi Demo
