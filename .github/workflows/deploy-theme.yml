@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   deploy:
-    runs-on: tenki-local-invalid-12
+    runs-on: tenki-local-invalid-13
     steps:
       - uses: actions/checkout@v4
       - name: Deploy to Krabi Demo
