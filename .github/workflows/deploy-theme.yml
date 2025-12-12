@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   deploy:
-    runs-on: [tenki-local-macos-26-4c-16g, tenki-local-ubuntu-22.04-small-2c-4g]
+    runs-on: [self-hosted, tenki-local-ubuntu-22.04-small-2c-4g]
     steps:
       - uses: actions/checkout@v4
       - name: Deploy to Krabi Demo
